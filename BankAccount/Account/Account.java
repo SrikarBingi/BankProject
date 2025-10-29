@@ -1,12 +1,12 @@
-package BankAccount;
+package Account;
 
-public class BankAccount {
+public class Account {
     private String accountNumber;
     private String accountHolderName;
     private double balance;
 
     //constructor
-    public BankAccount(String accountNumber, String accountHolderName, double balance) {
+    public Account(String accountNumber, String accountHolderName, double balance) {
         this.accountNumber = accountNumber;
         this.accountHolderName = accountHolderName;
         this.balance = balance;
@@ -16,7 +16,7 @@ public class BankAccount {
     public void deposit(double amount){
         if (amount > 0) {
             balance += amount;
-            System.out.println("Deposited ₹" + amount + ". New Balance: ₹" + balance);
+            System.out.println("Deposited " + amount + ". New Balance: " + balance);
         } else {
             System.out.println("Deposit amount must be greater than zero!");
         }
@@ -26,7 +26,7 @@ public class BankAccount {
     public void withdraw(double amount){
         if(amount > 0 && amount <= balance){
             balance -= amount;
-            System.out.println("Withdrew ₹" + amount + ". Remaining Balance: ₹" + balance);
+            System.out.println("Withdrew " + amount + ". Remaining Balance: " + balance);
         } else if(amount > balance){
             System.out.println("Insufficient balance!");
         } else{
@@ -43,6 +43,10 @@ public class BankAccount {
     public void displayAccountDetails() {
         System.out.println("Account Number: " + accountNumber);
         System.out.println("Account Holder: " + accountHolderName);
-        System.out.println("Balance: ₹" + balance);
+        System.out.println("Balance: " + balance);
+    }
+    
+    public void displayAccountType(){
+        System.out.println("Generic Account");
     }
 }
